@@ -1,1 +1,1 @@
-# researchcuhk2017.github.com
+# Research CUHK 2017
