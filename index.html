@@ -2,9 +2,313 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ResearchGO! &mdash; CUHK 2017</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style type="text/css">
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url('fonts/bootstrap/glyphicons-halflings-regular.eot');
+            src: url('fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+        }
+        body {
+            font-weight: 100;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+            background: #fff;
+        }
+        #page {
+            /*position: relative;*/
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+        }
+        a {
+            color: #666;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+        }
+        a:hover, a:active, a:focus {
+            color: #222222;
+            outline: none;
+            text-decoration: none;
+        }
+        .page-nav {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            padding: 40px 0;
+            z-index: 1001;
+        }
+        #logo {
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .page-nav a {
+            padding: 5px 10px;
+            color: #666;
+        }
+        .page-nav ul {
+            padding: 0;
+            margin: 8px 0 0 0;
+        }
+        .page-nav ul li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: inline;
+        }
+        .page-nav ul li a {
+            font-size: 18px;
+            padding: 35px 15px;
+            color: #666;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+        }
+        .page-nav ul li a:hover, .page-nav ul li a:focus, .page-nav ul li a:active {
+            color: #222222;
+        }
+        #header {
+            height: 600px;
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        #header .overlay {
+            z-index: 0;
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        #title {
+            /*margin-left: -40px;*/
+            margin-top: 280px;
+        }
+        #title h1,
+        #title h2 {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        #title h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        #title h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .gray-bg {
+            background-color: #F4F4F4;
+        }
+        .section {
+            padding-top: 5%;
+            padding-bottom: 5%;
+            overflow: auto;
+        }
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .report-title, .task-title {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+        .report-item {
+            margin: 0 auto 5% auto;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .report-item:last-child {
+            margin-bottom: 0;
+        }
+        .item-img-container {
+            padding: 0;
+        }
+        .item-img {
+            margin: 0 auto;
+        }
+        .item-txt-container {
+            background-color: white;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+        .item-title {
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        .item-text {
+            line-height: 1.8;
+        }
+        .item-link {
+            margin-right: 0;
+            margin-left: auto;
+            -ms-flex-item-align: end;
+            -webkit-align-self: flex-end;
+            align-self: flex-end;
+        }
+        .item-btn {
+            border-radius: 50px;
+            font-size: 1em;
+            padding: 0.5em 2.5em;
+            margin: 0.25em;
+            background: transparent;
+            border: 2px solid #4EA7FF;
+            color: #4EA7FF;
+        }
+        .item-btn:hover,
+        .item-btn:focus {
+            background: #4EA7FF;
+            color: white;
+        }
+        thead tr th {
+            text-align: center;
+        }
+        #foot h1 {
+            margin-top: 40px;
+        }
+        #foot h1, #foot p {
+            line-height: 0.6;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+<div id="page">
+    <nav class="page-nav" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div id="logo">
+                        <a href="#page">CUHK.</a>
+                    </div>
+                </div>
+                <div class="col-xs-8 text-right">
+                    <ul>
+                        <li><a href="#report">Report</a></li>
+                        <li><a href="#task">Update</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header id="header" role="banner" style="background-image: url(img/banner-city-1920x600.jpg)">
+        <!--<div class="overlay"></div>-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div id="title">
+                        <h1>Research GO!</h1>
+                        <h2>Data Visualization Report &mdash; CHUK Bussiness School on 2017</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="report" class="container-fluid">
+        <div class="row gray-bg">
+            <div id="report-section" class="section">
+                <div class="section-container text-center">
+                    <h1 class="report-title">Report List</h1>
+                    <div class="report-item">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 item-img-container">
+                            <img src="img/report1/report1-item-600x300.jpg" class="item-img">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 item-txt-container">
+                            <h2 class="item-title">Gradual Position Changes of Mobike</h2>
+                            <p class="item-text">Analysis mobike's statistical data(Shanghai), and compare position and trip between 2017/07/21(Fri.) and 2017/07/22(Sat.)</p>
+                            <a href="page/report1.html" class="btn item-link item-btn">Detail</a>
+                        </div>
+                    </div>
+                    <div class="report-item">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 item-txt-container">
+                            <h2 class="item-title">Collating data of Mobike-Cup's</h2>
+                            <p class="item-text">Processing data(Beijing) got from Mobike-Cup, and compare behavior between 2017/05/12(Fri.) and 2017/05/13(Sat.).</p>
+                            <a href="page/report2.html" class="btn item-link item-btn">Detail</a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 item-img-container">
+                            <img src="img/report2/report2-item-600x300.jpg" class="item-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="task" class="container-fluid">
+        <div class="row">
+            <div id="task-section" class="section">
+                <div class="section-container text-center">
+                    <h1 class="task-title">Update List</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Detail</th>
+                                <th>State</th>
+                                <th>Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Gradual Position Changes of Mobike</td>
+                                <td><a href="page/report1.html">Report-Mobike-01</a></td>
+                                <td><img src="img/new.gif">&nbsp;2017/09/11</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Collating data of Mobike-Cup's</td>
+                                <td><a href="page/report2.html">Report-Mobike-02</a></td>
+                                <td><img src="img/new.gif">&nbsp;2017/09/11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="foot" class="container-fluid">
+    <div class="row gray-bg">
+        <div class="col-md-12 text-center">
+            <h1></h1>
+            <p>
+                Copyright &copy; 2017. <a href="https://github.com/helyao">YaoHeli</a>. All rights reserved.
+            </p>
+            <h1></h1>
+        </div>
+    </div>
+</footer>
 </body>
+<script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="application/javascript" src="js/bootstrap.min.js"></script>
 </html>
