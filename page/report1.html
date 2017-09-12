@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Gradual Position Changes of Mobike</title>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            font-weight: 100;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+            background: #F4F4F4;
+        }
+        a {
+            color: #666;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+        }
+        a:hover, a:active, a:focus {
+            color: #222222;
+            outline: none;
+            text-decoration: none;
+        }
+        .page-nav {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            margin: 30px 0px 30px 0px;
+            padding: 10px 0;
+            z-index: 1001;
+            background-color: #122b40;
+        }
+        #logo {
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        #logo a {
+            color: #d5d5d5;
+        }
+        #page {
+            margin-top: 120px;
+        }
+        #page h1 {
+            margin-bottom: 40px;
+        }
+        #page h3 {
+            margin-left: 40px;
+        }
+        .bg-white {
+            background-color: white;
+        }
+        .page-img {
+            width: 100%;
+            height: 400px;
+            background-image: url("../img/report1/title.jpg");
+            -moz-background-size:100% 100%;
+            background-size:100% 100%;
+        }
+    </style>
 </head>
 <body>
-
+<nav id="header" class="page-nav" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="logo">
+                    <a href="../index.html">CHUK Bussiness School on 2017</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id="page" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1>Gradual Position Changes of Mobike</h1>
+            <div class="page-img"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

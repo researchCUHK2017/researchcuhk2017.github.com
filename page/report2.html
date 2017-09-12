@@ -2,9 +2,458 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Collating data of Mobike-Cup's</title>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            font-weight: 100;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+            background: #F4F4F4;
+        }
+        a {
+            color: #666;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+        }
+        a:hover, a:active, a:focus {
+            color: #222222;
+            outline: none;
+            text-decoration: none;
+        }
+        .page-nav {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            margin: 30px 0px 30px 0px;
+            padding: 10px 0;
+            z-index: 1001;
+            background-color: #122b40;
+        }
+        #logo {
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        #logo a {
+            color: #d5d5d5;
+        }
+        #page {
+            margin-top: 120px;
+        }
+        #page h1 {
+            margin-bottom: 40px;
+        }
+        #page h3 {
+            margin-left: 40px;
+        }
+        .bg-white {
+            background-color: white;
+        }
+        .page-img {
+            width: 100%;
+            height: 400px;
+            background-image: url("../img/report2/title.jpg");
+            -moz-background-size:100% 100%;
+            background-size:100% 100%;
+        }
+        th, td {
+            text-align: center;
+        }
+        #foot h1 {
+            margin-top: 40px;
+        }
+        #foot h1, #foot p {
+            line-height: 0.6;
+        }
+        #chart-daily-trip,
+        #chart-hour-trip-1,
+        #chart-hour-trip-2 {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
-
+<nav id="header" class="page-nav" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="logo">
+                    <a href="../index.html">CHUK Bussiness School on 2017</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id="page" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1>Collating data of Mobike-Cup's</h1>
+            <div class="page-img"></div>
+        </div>
+    </div>
+    <div class="container bg-white">
+        <div class="row text-right">
+            <p style="margin-top: 20px; margin-right: 20px">Published: 2017-09-11 22:16</p>
+        </div>
+        <div class="row">
+            <h3>1. Basic Information Statistics</h3>
+            <div class="col-md-offset-1 col-md-10">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                        <th>Commit</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Location</td>
+                        <td>Beijing</td>
+                        <td>Research location.</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>2017/05/10 ~ 2017/05/24 except 2017/05/17</td>
+                        <td>Research time range.</td>
+                    </tr>
+                    <tr>
+                        <td>Trip</td>
+                        <td>3,214,096</td>
+                        <td>The total amount of trips.</td>
+                    </tr>
+                    <tr>
+                        <td>User</td>
+                        <td>349,693</td>
+                        <td>The number of user who uses mobikes.</td>
+                    </tr>
+                    <tr>
+                        <td>Mobike</td>
+                        <td>349,693</td>
+                        <td>The number of Mobike used.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <h3>2. The weather of those days</h3>
+            <div class="col-md-offset-1 col-md-10">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Week</th>
+                        <th>Max-Temperature</th>
+                        <th>Min-Temperature</th>
+                        <th>Weather</th>
+                        <th>Wind-Direction</th>
+                        <th>Wind-Power</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2017/05/10</td>
+                        <td>Wed.</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>Sunny</td>
+                        <td>Southwest</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/11</td>
+                        <td>Thur.</td>
+                        <td>31</td>
+                        <td>12</td>
+                        <td>Sunny</td>
+                        <td>North</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/12</td>
+                        <td>Fri.</td>
+                        <td>29</td>
+                        <td>15</td>
+                        <td>Cloudy</td>
+                        <td>Northwest</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/13</td>
+                        <td>Sat.</td>
+                        <td>27</td>
+                        <td>15</td>
+                        <td>Sunny</td>
+                        <td>West</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/14</td>
+                        <td>Sun.</td>
+                        <td>27</td>
+                        <td>14</td>
+                        <td>Cloudy</td>
+                        <td>South</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/15</td>
+                        <td>Mon.</td>
+                        <td>28</td>
+                        <td>15</td>
+                        <td>Sunny</td>
+                        <td>Southwest</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/16</td>
+                        <td>Tues.</td>
+                        <td>32</td>
+                        <td>17</td>
+                        <td>Cloudy</td>
+                        <td>Southwest</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/17</td>
+                        <td>Wed.</td>
+                        <td>34</td>
+                        <td>19</td>
+                        <td>Sunny</td>
+                        <td>South</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/18</td>
+                        <td>Thur.</td>
+                        <td>25</td>
+                        <td>21</td>
+                        <td>Sunny</td>
+                        <td>Southwest</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/19</td>
+                        <td>Fri.</td>
+                        <td>26</td>
+                        <td>22</td>
+                        <td>Cloudy</td>
+                        <td>Southwest</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/20</td>
+                        <td>Sat.</td>
+                        <td>35</td>
+                        <td>20</td>
+                        <td>Cloudy</td>
+                        <td>Southeast</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/21</td>
+                        <td>Sun.</td>
+                        <td>31</td>
+                        <td>18</td>
+                        <td>Cloudy</td>
+                        <td>Southeast</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/22</td>
+                        <td>Mon.</td>
+                        <td>18</td>
+                        <td>13</td>
+                        <td>Light to moderate rain</td>
+                        <td>Northeast</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/23</td>
+                        <td>Tues.</td>
+                        <td>28</td>
+                        <td>14</td>
+                        <td>Sunny</td>
+                        <td>Southwest</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2017/05/24</td>
+                        <td>Wed.</td>
+                        <td>33</td>
+                        <td>17</td>
+                        <td>Cloudy</td>
+                        <td>West</td>
+                        <td>5</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <h3>3. The amount of daily trips</h3>
+            <div class="col-md-offset-1 col-md-10">
+                <div id="chart-daily-trip"></div>
+            </div>
+            <!--<div class="col-md-10 col-md-offset-1 text-center">-->
+                <!--<small>Maybe the data is incomplete.</small>-->
+            <!--</div>-->
+        </div>
+        <div class="row">
+            <h3>4. The amount of trips per hour</h3>
+            <div class="col-md-offset-1 col-md-10">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>2017/05/14</th>
+                        <th>2017/05/15</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="bg-primary">Weather</td>
+                        <td>Cloudy</td>
+                        <td>Sunny</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info">Week</td>
+                        <td>Sunday</td>
+                        <td>Monday</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-primary">Trips</td>
+                        <td>236,594</td>
+                        <td>279,554</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info">Users</td>
+                        <td>132,960</td>
+                        <td>165,867</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-primary">Mobikes</td>
+                        <td>168,360</td>
+                        <td>189,961</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info">Aver-Distance</td>
+                        <td>881</td>
+                        <td>946</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-primary">SD-Distance</td>
+                        <td>789</td>
+                        <td>850</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info">Mid-Distance</td>
+                        <td>1400</td>
+                        <td>854</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-primary">Max-Distance</td>
+                        <td>31580</td>
+                        <td>23909</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="text-center col-md-12">Workday VS Weekday <small>- 2017/05/14 vs 2017/05/15</small></h4>
+            <div class="col-md-offset-1 col-md-10">
+                <div id="chart-hour-trip-1"></div>
+            </div>
+            <div class="col-md-offset-1 col-md-10">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>2017/05/15</th>
+                        <th>2017/05/22</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="bg-primary">Weather</td>
+                        <td>Sunny</td>
+                        <td>Light to moderate rain</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info">Week</td>
+                        <td>Monday</td>
+                        <td>Monday</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-primary">Trips</td>
+                        <td>279,554</td>
+                        <td>124,816</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info">Users</td>
+                        <td>165,867</td>
+                        <td>94,017</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-primary">Mobikes</td>
+                        <td>189,961</td>
+                        <td>100,885</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info">Aver-Distance</td>
+                        <td>946</td>
+                        <td>922</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-primary">SD-Distance</td>
+                        <td>850</td>
+                        <td>813</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-info">Mid-Distance</td>
+                        <td>854</td>
+                        <td>1402</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-primary">Max-Distance</td>
+                        <td>23909</td>
+                        <td>44486</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="text-center col-md-12">Sunny day VS Rainy day <small>- 2017/05/15 vs 2017/05/22</small></h4>
+            <div class="col-md-offset-1 col-md-10">
+                <div id="chart-hour-trip-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="foot" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1></h1>
+            <p>
+                Copyright &copy; 2017. <a href="https://github.com/helyao">YaoHeli</a>. All rights reserved.
+            </p>
+            <h1></h1>
+        </div>
+    </div>
+</footer>
 </body>
+<script type="application/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="application/javascript" src="../js/bootstrap.min.js"></script>
+<script type="application/javascript" src="../js/echarts.min.js"></script>
+<script type="application/javascript" src="../js/report2/chart.js"></script>
 </html>
