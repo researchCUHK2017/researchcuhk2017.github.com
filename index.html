@@ -20,6 +20,15 @@
             color: #666;
             background: #fff;
         }
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(../img/loader.gif) center no-repeat #fff;
+        }
         #page {
             /*position: relative;*/
             overflow-x: hidden;
@@ -203,6 +212,7 @@
     </style>
 </head>
 <body>
+<div class="loader"></div>
 <div id="page">
     <nav class="page-nav" role="navigation">
         <div class="container">
@@ -311,4 +321,18 @@
 </body>
 <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
+<script type="application/javascript">
+    ;(function () {
+        // Loading page
+        var loaderPage = function() {
+            $(".loader").fadeOut("slow");
+        };
+
+        // When loaded
+        $(function(){
+            loaderPage();
+        });
+
+    }());
+</script>
 </html>
