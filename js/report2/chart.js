@@ -68,6 +68,19 @@ var option_hour_trip_1 = {
         trigger: 'axis',
         axisPointer : {
             type : 'shadow'
+        },
+        formatter: function (params) {
+            var result = parseInt(params[0].name) + ' to ' + (parseInt(params[0].name) + 1) + ' (hour)<br>';
+            params.forEach(function (item) {
+                result += '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + item.color + '"></span>';
+                result += item.seriesName + ": " + '<span style="color: #fff;">' + item.data + "%</span><br>";
+                //if (parseFloat(item.data) >= 0) {
+                //    result += item.seriesName + ": " + '<span style="color: #e30101;">' + item.data + "%</span><br>"
+                //} else if (parseFloat(item.data) < 0) {
+                //    result += item.seriesName + ": " + '<span style="color:#049500">' + item.data + "%</span><br>"
+                //}
+            });
+            return result;
         }
     },
     legend: {
@@ -87,7 +100,13 @@ var option_hour_trip_1 = {
         }
     ],
     yAxis : {
-        type : 'value'
+        type : 'value',
+        axisLabel : {
+            show : true,
+            formatter : function (value) {
+                return value + '%';
+            }
+        }
     },
     series : [
         {
@@ -119,6 +138,14 @@ var option_hour_trip_2 = {
         trigger: 'axis',
         axisPointer : {
             type : 'shadow'
+        },
+        formatter: function (params) {
+            var result = parseInt(params[0].name) + ' to ' + (parseInt(params[0].name) + 1) + ' (hour)<br>';
+            params.forEach(function (item) {
+                result += '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + item.color + '"></span>';
+                result += item.seriesName + ": " + '<span style="color: #fff;">' + item.data + "%</span><br>";
+            });
+            return result;
         }
     },
     legend: {
@@ -138,7 +165,13 @@ var option_hour_trip_2 = {
         }
     ],
     yAxis : {
-        type : 'value'
+        type : 'value',
+        axisLabel : {
+            show : true,
+            formatter : function (value) {
+                return value + '%';
+            }
+        }
     },
     series : [
         {
