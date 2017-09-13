@@ -60,7 +60,7 @@ chart_daily_trip.setOption(option_daily_trip);
 
 
 
-// Hour trip chart (workday vs weekday)
+// Hour trip chart (workday vs weekend)
 var chart_hour_trip_1 = echarts.init(document.getElementById('chart-hour-trip-1'));
 
 var option_hour_trip_1 = {
@@ -84,7 +84,7 @@ var option_hour_trip_1 = {
         }
     },
     legend: {
-        data: ['Weekday', 'Workday']
+        data: ['weekend', 'Workday']
     },
     grid: {
         left: '3%',
@@ -110,7 +110,7 @@ var option_hour_trip_1 = {
     },
     series : [
         {
-            name:'Weekday',
+            name:'weekend',
             type:'bar',
             data:[0.39, 0.20, 0.11, 0.08, 0.10, 0.58, 1.64, 3.62, 5.27, 4.86, 6.08, 6.69, 6.39, 5.78, 6.15, 6.43, 7.22, 8.23, 8.01, 7.43, 6.23, 4.82, 2.83, 0.90]
         },
@@ -188,3 +188,192 @@ var option_hour_trip_2 = {
 };
 
 chart_hour_trip_2.setOption(option_hour_trip_2);
+
+
+
+
+
+
+
+// The distrubution of distance (2017/05/14)
+var chart_distance_trip_1 = echarts.init(document.getElementById('chart-distance-trip-1'));
+
+var option_distance_trip_1 = {
+    title : {
+        text: '2017/05/14',
+        subtext: 'Weekend & Sunny',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['0~1km', '1~2km', '2~3km', '3~4km', '4~5km', '5~6km', '6~7km', '>7km']
+    },
+    series : [
+        {
+            name:'Distance',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            lableLine: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {value:127853, name:'0~1km'},
+                {value:93967, name:'1~2km'},
+                {value:11195, name:'2~3km'},
+                {value:1983, name:'3~4km'},
+                {value:843, name:'4~5km'},
+                {value:418, name:'5~6km'},
+                {value:184, name:'6~7km'},
+                {value:60, name:'7~8km'},
+                {value:151, name:'>7km'}
+            ]
+        }
+    ]
+};
+
+chart_distance_trip_1.setOption(option_distance_trip_1);
+
+
+
+
+
+
+
+// The distrubution of distance (2017/05/15)
+var chart_distance_trip_2 = echarts.init(document.getElementById('chart-distance-trip-2'));
+
+var option_distance_trip_2 = {
+    title : {
+        text: '2017/05/15',
+        subtext: 'Workday & Sunny',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['0~1km', '1~2km', '2~3km', '3~4km', '4~5km', '5~6km', '6~7km', '>7km']
+    },
+    series : [
+        {
+            name:'Distance',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            lableLine: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {value:143590, name:'0~1km'},
+                {value:114953, name:'1~2km'},
+                {value:15173, name:'2~3km'},
+                {value:3022, name:'3~4km'},
+                {value:1343, name:'4~5km'},
+                {value:771, name:'5~6km'},
+                {value:357, name:'6~7km'},
+                {value:136, name:'7~8km'},
+                {value:345, name:'>7km'}
+            ]
+        }
+    ]
+};
+
+chart_distance_trip_2.setOption(option_distance_trip_2);
+
+
+
+
+
+
+
+// The distrubution of distance (2017/05/22)
+var chart_distance_trip_3 = echarts.init(document.getElementById('chart-distance-trip-3'));
+
+var option_distance_trip_3 = {
+    title : {
+        text: '2017/05/22',
+        subtext: 'Workday & Rainy',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['0~1km', '1~2km', '2~3km', '3~4km', '4~5km', '5~6km', '6~7km', '>7km']
+    },
+    series : [
+        {
+            name:'Distance',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            lableLine: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {value:65490, name:'0~1km'},
+                {value:50704, name:'1~2km'},
+                {value:6383, name:'2~3km'},
+                {value:1173, name:'3~4km'},
+                {value:546, name:'4~5km'},
+                {value:290, name:'5~6km'},
+                {value:127, name:'6~7km'},
+                {value:47, name:'7~8km'},
+                {value:103, name:'>7km'}
+            ]
+        }
+    ]
+};
+
+chart_distance_trip_3.setOption(option_distance_trip_3);
