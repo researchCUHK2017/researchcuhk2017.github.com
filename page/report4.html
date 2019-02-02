@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradual Position Changes of Mobike</title>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script type="application/javascript" src="../js/baidu_statistics.js"></script>
+    <script type="application/javascript" src="../js/report4/report4-2013.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pg0YrmTrad0QDGGj01194RxMuR0ZEFzg"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <style type="text/css">
+        body {
+            font-weight: 100;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+            background: #F4F4F4;
+        }
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(../img/loader.gif) center no-repeat #fff;
+        }
+        a {
+            color: #666;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+        }
+        a:hover, a:active, a:focus {
+            color: #222222;
+            outline: none;
+            text-decoration: none;
+        }
+        .page-nav {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            margin: 30px 0px 30px 0px;
+            padding: 10px 0;
+            z-index: 1001;
+            background-color: #122b40;
+        }
+        #logo {
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        #logo a {
+            color: #d5d5d5;
+        }
+        #page {
+            margin-top: 120px;
+        }
+        #page h1 {
+            margin-bottom: 40px;
+        }
+        #page h3 {
+            margin-left: 40px;
+        }
+        #page img {
+            width: 100%;
+        }
+        .bg-white {
+            background-color: white;
+        }
+        .page-img {
+            width: 100%;
+            height: 400px;
+            background-image: url("../img/report4/title.jpg");
+            -moz-background-size:100% 100%;
+            background-size:100% 100%;
+        }
+        th, td {
+            text-align: center;
+        }
+        #foot h1 {
+            margin-top: 40px;
+        }
+        #foot h1, #foot p {
+            line-height: 0.6;
+        }
+        #container {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+<div class="loader"></div>
+<nav id="header" class="page-nav" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="logo">
+                    <a href="../index.html">Access Network Location of USA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id="page" class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <h1>Distribution of Internet Users</h1>
+            <div class="page-img"></div>
+        </div>
+    </div>
+    <div class="container bg-white">
+        <div class="row text-right">
+            <p style="margin-top: 20px; margin-right: 20px">Published: 2019-02-01 20:51</p>
+        </div>
+        <div class="row">
+            <h3>1. Overview of the full USA</h3>
+            <div class="col-md-offset-1 col-md-10">
+                <h4>Data Size: 145868575 from 46927 machines</h4>
+                <img src="../img/report4/full-map-2013.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <h3>2. Overview of the main-land</h3>
+            <div class="col-md-offset-1 col-md-10">
+                <img src="../img/report4/mainland-map-2013.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <h3>3. Detail of the North-East</h3>
+            <div class="col-md-offset-1 col-md-10">
+                <h4>The largest number of visitors comes from New York, Washington, Chicago, Philadelphia, Boston and Atlanta.</h4>
+                <img src="../img/report4/north-east-2013.jpg">
+            </div>
+        </div>
+        <div class='row'>
+            <h3>4. Baidu Map with the processed data</h3>
+            <div class="col-md-offset-1 col-md-10">
+                <div id="container"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="foot" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1></h1>
+            <p>
+                Copyright &copy; 2017. <a href="https://github.com/helyao">YaoHeli</a>. All rights reserved.
+            </p>
+            <h1></h1>
+        </div>
+    </div>
+</footer>
+</body>
+<script type="application/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="application/javascript" src="../js/bootstrap.min.js"></script>
+<script type="application/javascript" src="../js/echarts.min.js"></script>
+<script type="application/javascript" src="../js/report3/chart.js"></script>
+<script type="application/javascript">
+    ;(function () {
+        // Loading page
+        var loaderPage = function() {
+            $(".loader").fadeOut("slow");
+        };
+
+        // When loaded
+        $(function(){
+            loaderPage();
+        });
+
+        // Load Baidu Map
+        var map = new BMap.Map("container");
+
+        var point = new BMap.Point(-101.925077, 40.540257);
+        map.centerAndZoom(point, 5);
+        map.enableScrollWheelZoom();
+
+        if(!isSupportCanvas()){
+            alert('Thermal Map currently only supports browsers with canvas support.')
+        }
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        heatmapOverlay.setDataSet({data:points,max:312961});
+        heatmapOverlay.show();
+
+        // Determine whether browsers support canvas
+        function isSupportCanvas(){
+            var elem = document.createElement('canvas');
+            return !!(elem.getContext && elem.getContext('2d'));
+        }
+    }());
+</script>
+</html>
